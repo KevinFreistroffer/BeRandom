@@ -1,5 +1,7 @@
 {
   "name": "random-alarm-ionic",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }
