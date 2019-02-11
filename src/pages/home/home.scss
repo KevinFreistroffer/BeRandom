@@ -6,7 +6,7 @@ page-home {
 
 	ion-header {
 		.toolbar-background {
-			background-color: #371616 !important;
+			background-color: #203f48 !important;
 		}
 
 		.bar-button {
@@ -15,71 +15,132 @@ page-home {
 
 		.toolbar-title {
 		    text-transform: uppercase;
-    		color: #f4b56b;
+    		color: #fff;
 		}
 
 		ion-navbar {
 			height: 6rem;
 		}
 	}
+		
+	.scroll-content {
+		padding: 0 !important;
+	}
 
 	ion-grid {
 		min-height: 100%;
-		padding: 7vh 7% 7% !important; 
-		margin-top: 2rem;
-		background-color: rgba(210, 210, 210, 0.3411764705882353);
+		padding: 0 0 7% !important;
+		background-color: rgba(29, 66, 76, 0.93);
 
-		h1 {
-		    width: 100%;
-		    font-weight: 100;
-		    font-size: 11vw;
-		    line-height: 12vw;
-		    letter-spacing: 0.35rem;
-		    color: #fff;
-		    margin-bottom: 6vh;
-		    text-align: center;	
+		ion-row.row--description {
+			width: 100% !important;
+			padding: 7vh 10% 0;
+			margin: 0 auto !important;
+
+			h1 {
+				width: 100%;
+			    font-weight: 500;
+			    font-size: 4vw;
+			    line-height: 7vw;
+			    letter-spacing: 0.25rem;
+			    color: rgba(255, 255, 255, 0.87);
+			    margin-bottom: 6vh;
+			    text-align: center;
+			}
 		}
+
 		
 		form {
 			width: 100%;
 			
-			ion-item {
-				background-color: rgba(255, 255, 255, 0.89) !important;
-				border-radius: 0.25rem !important;
-    			margin: 1rem auto !important;
+			ion-list {
+	
+				
+				ion-item {
+					background-color: rgba(255, 255, 255, 0.89) !important;
+					border-radius: 0.25rem !important;
+	    			margin: 1rem 7% !important;
+	    			width: 86% !important;
+	    			border: none !important;
 
-    			ion-label {
-    				color: #c4a074;
-				    font-size: 2rem;
-				    font-weight: bold;
-    			}
+	    			ion-label {
+	    				color: #2d444c;
+					    font-size: 2rem;
 
-    			&.alarm-button-item, &.alarm-button-item > .item-inner {
-    				background-color: transparent !important;
-    			}
-			}
-			
+					    &.label-md, &.item-input-has-focus, &.input-has-focus {
+					    	font-weight: 100;
+					    	color: #49777d !important;
+					    }
+	    			}
+					
 
-			#alarm-button {
-			    width: 16rem;
-			    height: 16rem;
-			    font-size: 3rem;
-			    display: flex;
-			    justify-content: center;
-			    align-items: center;
-			    border-radius: 10000rem;
-			    background-color: #5eff9b;
-			    box-shadow: 0 0 24px #257644;
-			    color: #ffffff80;
-			    margin: 6vh auto;
-			    border: 0.3rem solid #50df86;
-			    text-transform: uppercase;
-			    flex-wrap: wrap;
+				
+	    			&.item--alarm-button, &.item--alarm-button > .item-inner, &.item--song-name, &.item--song-name > .item-inner {
+	    				background-color: transparent !important;
+	    				border: none !important;
+	    			}
+
+	    			&.item--song-name {
+	    				padding-left: 0;
+	    				margin: 0;
+
+	    				ion-label {
+	    					margin-top: 0;
+	    					color: #86d7e2; 
+	    					font-size: 1.5rem;
+	    					text-align: center;
+	    				}
+	    			}
+
+	    			&.item--select-a-sound {
+	    				padding: 0vh 0;
+	    				color: #fff;
+	    				font-size: 1.55rem;
+	    				text-align: center;
+    					background: transparent !important;
+
+    					> .item-inner {
+    						border: none !important;
+
+    						ion-label {
+    							color: #fff;
+    							font-weight: bold;
+    							cursor: pointer;
+    						}
+    					}
+	    			}
+
+				} /* ion-item */
+					
+				#alarm-button {
+				    width: 16rem;
+				    height: 16rem;
+				    font-size: 3rem;
+				    display: flex;
+				    justify-content: center;
+				    align-items: center;
+				    border-radius: 10000rem;
+				    background-color: #49777d;
+				    box-shadow: 0 0 11px #44bfba;
+				    color: #cae5ff;
+				    margin: 7vh auto 0;
+				    border: 0.3rem solid #86d7e2;
+				}
 			}
 		}
 		
+		#sound-menu {
+			width: 100%;
+			height: 0;
+			overflow: hidden;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			background-color: rgba(0,0,0,0.7);
+		}
 
-		audio { display: none; }
+		audio { display: block; } 
 	}
 }
  
@@ -88,6 +149,14 @@ page-home {
 	page-home {
 		ion-grid {
 			padding-top: 14vh !important;
+		}
+	}
+}
+
+@media only screen and ( min-width: 700px) {
+	page-home {
+		ion-grid {
+
 		}
 	}
 }

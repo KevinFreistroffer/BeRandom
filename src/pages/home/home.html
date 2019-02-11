@@ -1,31 +1,43 @@
 <ion-header>
   <ion-navbar>
-    <button ion-button menuToggle>
+    <ion-title center >Alarm</ion-title>
+  <!--   <button ion-button menuToggle right>
       <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Random Alarm</ion-title>
-  </ion-navbar>
+    </button> -->
+  </ion-navbar> 
 </ion-header>
 
 <ion-content padding>
   <ion-grid padding>
-    <ion-row justify-content-start>
-      <h1 class="description">Be Less Predictable</h1> 
+    <ion-row class="row--description" justify-content-start>
+      <h1 class="description">Survive better with random alarms to become less predictable.</h1>  
     </ion-row>
+
+   <!--  <ion-row>
+      <audio id="my-audio" autoplay="true"  controls="true"> 
+        <source [src]="audioSrc" [type]="audioType" />
+      </audio>
+    </ion-row> -->
 
     <ion-row justify-content-end>
       <form name="form" [formGroup]="timeForm" (ngSubmit)="handleOnSubmit()">
         <ion-list>
-          <ion-item>
-            <ion-label floating>Minimum time for the alarm</ion-label>
+          <ion-item class="item--minimum">
+            <ion-label floating>Minimum minutes</ion-label>
             <ion-input id="minimum" (ionChange)="this.handleOnChange($event)" type="number" formControlName="minimum"></ion-input> 
           </ion-item>
-          <ion-item>
-            <ion-label floating>Maximum time for the alarm</ion-label>
+          <ion-item class="item--maximum">
+            <ion-label floating>Maximum minutes</ion-label>
             <ion-input id="maximum" floating (ionChange)="this.handleOnChange($event)" type="number" formControlName="maximum"></ion-input>
-          </ion-item>
-          <ion-item class="alarm-button-item">
+          </ion-item>        
+          <ion-item class="item--alarm-button"> 
             <button padding id="alarm-button" (click)="toggleAlarm()">{{alarmButtonText}}</button>
+          </ion-item>
+          <ion-item class="item--song-name">
+           <span>Sound: <span class="song-name">{{selectedSound.fileName}}</span></span>
+          </ion-item>
+          <ion-item class="item--select-a-sound">
+              <div id="select-a-sound" (click)="toggleSoundSelectMenu()">Choose a sound</div>
           </ion-item>
         </ion-list>
       </form>

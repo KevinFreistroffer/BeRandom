@@ -15,8 +15,28 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
+@font-face{
+font-family: 'Raleway';
+src: url('../assets/fonts/raleway.woff2') format('woff2');
+}
+ 
+*{
+	font-family: 'Raleway', Tahoma, sans-serif !important;
+	box-sizing: border-box;
+	letter-spacing: 0.1rem;
+}
+
+ul {
+	list-style: none;
+}
+
 ion-content {
 	background-image: url('../assets/imgs/boat.jpg') !important; 
-	background-size: cover;
 	background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    .scroll-content {
+    	padding: 0;
+    }
 }
